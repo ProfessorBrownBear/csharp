@@ -1,0 +1,79 @@
+To demonstrate inheritance and polymorphism, write a fully function C# program developing a mammal and a plant: 
+Make subclasses of these 2 parent supertypes and show subclassing and polymorphic expressions of method explication at runtime
+
+Below is a simple C# program to demonstrate inheritance and polymorphism using a Mammal and a Plant as parent classes, and creating subclasses for each.
+
+In this example:
+
+Mammal superclass has a subclass Human.
+Plant superclass has a subclass Tree.
+Both Mammal and Plant have a Display method which is overridden by their subclasses to demonstrate polymorphism.
+csharp
+Copy code
+using System;
+
+namespace InheritanceAndPolymorphismDemo
+{
+    // Mammal superclass
+    public class Mammal
+    {
+        public virtual void Display()
+        {
+            Console.WriteLine("This is a mammal.");
+        }
+    }
+
+    // Human subclass of Mammal
+    public class Human : Mammal
+    {
+        public override void Display()
+        {
+            Console.WriteLine("This is a human.");
+        }
+    }
+
+    // Plant superclass
+    public class Plant
+    {
+        public virtual void Display()
+        {
+            Console.WriteLine("This is a plant.");
+        }
+    }
+
+    // Tree subclass of Plant
+    public class Tree : Plant
+    {
+        public override void Display()
+        {
+            Console.WriteLine("This is a tree.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Mammal myMammal = new Mammal();
+            Mammal myHuman = new Human();
+            Plant myPlant = new Plant();
+            Plant myTree = new Tree();
+
+            // Polymorphic expressions of method calls at runtime
+            myMammal.Display();  // Output: This is a mammal.
+            myHuman.Display();   // Output: This is a human.
+            myPlant.Display();   // Output: This is a plant.
+            myTree.Display();    // Output: This is a tree.
+        }
+    }
+}
+
+
+The Mammal and Plant classes each have a Display method that outputs a message indicating the type of object.
+The Human class, which is a subclass of Mammal, and the Tree class, which is a subclass of Plant, override the Display method to provide their own messages.
+In the Main method, objects of both the superclass and subclass types are created, and the Display method is called on each object.
+Even though the object types are declared as the superclass types (Mammal and Plant), the overridden Display methods of the Human and Tree subclasses are called, 
+demonstrating polymorphism.
+
+This example shows basic inheritance (with the Human class inheriting from Mammal and the Tree class inheriting from Plant) and polymorphism
+(with the Display method being overridden in the subclasses and the correct method being called at runtime based on the actual type of the object).
