@@ -1,0 +1,28 @@
+using System;
+
+public class Dog
+{
+    private string name = string.Empty;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public void Bark()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+// Adding a Program class with a Main method
+class Program
+{
+    static void Main(string[] args)
+    {
+        Dog myDog = new Dog();
+        myDog.Name = "Buddy";
+        myDog.Bark(); // Output: Woof!
+    }
+}
